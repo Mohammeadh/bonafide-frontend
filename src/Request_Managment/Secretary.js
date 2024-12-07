@@ -24,7 +24,7 @@ const Seceratory = (props) => {
 
   async function fetchData() {
     try {
-      const response = await axios.get('http://localhost:3001/psna/seceratory');
+      const response = await axios.get('https://psna-mohammed-developer.onrender.com/psna/seceratory');
       if (response.data.tutor_data && response.data.hod_data && response.data.tech_data) {
         sethod(response.data.hod_data)
         setTutor(response.data.tutor_data)
@@ -54,7 +54,7 @@ const Seceratory = (props) => {
 
   async function reject(email, role) {
     try {
-      const resp = await axios.post('http://localhost:3001/psna/seceratory/reject', {
+      const resp = await axios.post('https://psna-mohammed-developer.onrender.com/psna/seceratory/reject', {
         data: {
           email, role
         }
@@ -74,7 +74,7 @@ const Seceratory = (props) => {
 
   const addhistory = async (name, year, department, reason, reg, father, cgpa, sem, gen, mode, email) => {
     try {
-      const history = await axios.post("http://localhost:3001/psna/addhistory", {
+      const history = await axios.post("https://psna-mohammed-developer.onrender.com/psna/addhistory", {
         data: {
           name, year, department, reason, reg, father, cgpa, sem, gen, mode, email
         }

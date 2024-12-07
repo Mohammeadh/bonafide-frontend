@@ -34,12 +34,11 @@ nav("/")
 
   const fetchData = async () => {
     if (Cookies.get("token")) {
-      const verify = await axios.post("http://localhost:3001/psna/verification", {
+      const verify = await axios.post("https://psna-mohammed-developer.onrender.com/psna/verification", {
         data: {
           token: Cookies.get('token') ? Cookies.get('token') : null
         }
       })
-      console.log(verify.data.message)
       setmsg(verify.data.message)
       if (verify.data.message === "cordinator" || verify.data.message === "hod" || verify.data.message === "adminHod") {
         start()
@@ -47,20 +46,16 @@ nav("/")
     }
   }
   async function start() {
-    const response = await axios.get('http://localhost:3001/psna/tech/edit');
-    console.log(response.data)
-    console.log(response.data.mesaage)
+    const response = await axios.get('https://psna-mohammed-developer.onrender.com/psna/tech/edit');
     setList(response.data.mesaage)
-    console.log(list)
   }
 
   const removeTutor = async (email) => {
-    const remove = await axios.post("http://localhost:3001/psna/tech/remove", {
+    const remove = await axios.post("https://psna-mohammed-developer.onrender.com/psna/tech/remove", {
       data: {
         email: email
       }
     })
-    console.log(remove.data)
     start()
   }
 
@@ -71,7 +66,7 @@ nav("/")
   }
 
   async function addTutor() {
-    const add = await axios.post("http://localhost:3001/psna/tech/add", {
+    const add = await axios.post("https://psna-mohammed-developer.onrender.com/psna/tech/add", {
       data: {
         name: name,
         email: email,

@@ -31,7 +31,7 @@ nav("/")
 
   const fetchData = async () => {
     if (Cookies.get("token")) {
-      const verify = await axios.post("http://localhost:3001/psna/verification", {
+      const verify = await axios.post("https://psna-mohammed-developer.onrender.com/psna/verification", {
         data: {
           token: Cookies.get('token') ? Cookies.get('token') : null
         }
@@ -114,7 +114,6 @@ nav("/")
 
     if (reason == "Bank loan") {
 
-      console.log(content1)
       const printWindow = window.open('', '', 'width= 2480,height=3508');
       printWindow.document.open();
       printWindow.document.write(`
@@ -337,7 +336,6 @@ nav("/")
     //passport
 
     if (reason == "passport") {
-      console.log("not a check function")
       const printWindow = window.open('', '', 'width= 2480,height=3508');
       printWindow.document.open();
       printWindow.document.write(`
@@ -488,7 +486,6 @@ nav("/")
 
 
     if (reason == "others") {
-      console.log("not a check function")
       const printWindow = window.open('', '', 'width= 2480,height=3508');
       printWindow.document.open();
       printWindow.document.write(`
@@ -562,8 +559,7 @@ nav("/")
   }
 
   const fetchdatas = async () => {
-    const data = await axios.get("http://localhost:3001/psna/addhistory")
-    console.log(data.data.index)
+    const data = await axios.get("https://psna-mohammed-developer.onrender.com/psna/addhistory")
     if (data.data.message) {
       sethistory(data.data.message)
     }

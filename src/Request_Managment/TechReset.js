@@ -16,7 +16,7 @@ function TechReset() {
 
     const fetchData = async () => {
         if (Cookies.get("token")) {
-            const verify = await axios.post("http://localhost:3001/psna/verification", {
+            const verify = await axios.post("https://psna-mohammed-developer.onrender.com/psna/verification", {
                 data: {
                     token: Cookies.get('token') ? Cookies.get('token') : null
                 }
@@ -32,8 +32,7 @@ function TechReset() {
 const RemoveHisory=async()=>
 {
 try{
-const history=await axios.get("http://localhost:3001/psna/addhistory/removeHistory")
-console.log(history.data)
+const history=await axios.get("https://psna-mohammed-developer.onrender.com/psna/addhistory/removeHistory")
 if(history.data.message==="History deleted")
 {
     toast.success("History deleted")
@@ -48,8 +47,7 @@ catch(err)
 const RemoveUser=async()=>
 {
     try{
-        const history=await axios.get("http://localhost:3001/psna/addhistory/removeUser")
-        console.log(history.data)
+        const history=await axios.get("https://psna-mohammed-developer.onrender.com/psna/addhistory/removeUser")
         if(history.data.message==="User deleted")
         {
             toast.success("User deleted")

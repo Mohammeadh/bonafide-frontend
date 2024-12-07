@@ -26,10 +26,8 @@ function Tutor(props) {
 
   async function fetchData() {
     try {
-      const response = await axios.get('http://localhost:3001/psna/tutor');
-      console.log(response.data.mesaage)
+      const response = await axios.get('https://psna-mohammed-developer.onrender.com/psna/tutor');
       setlist(response.data.mesaage);
-      console.log(list)
 
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -39,7 +37,7 @@ function Tutor(props) {
 
   async function create(id,name,email,reason,department,year,regNo,Contents,Subject,Gender,father,tutor,cgpa,sem,mode) {
     try {
-      const res = await axios.post('http://localhost:3001/psna/tutor/accept', {
+      const res = await axios.post('https://psna-mohammed-developer.onrender.com/psna/tutor/accept', {
         data: {
           id,name,email,reason,department,year,regNo,Contents,Subject,Gender,father,tutor,cgpa,sem,mode
         }
@@ -47,12 +45,11 @@ function Tutor(props) {
 
       );
       fetchData()
-      console.log(res.data.message);
       toast.success("Granted Sucessfully")
       if(res.data.info)
       {
         try{
-          const response_tutor = await axios.post('http://localhost:3001/psna/notify/hod',{
+          const response_tutor = await axios.post('https://psna-mohammed-developer.onrender.com/psna/notify/hod',{
             data:{
               name:name,
               department:department,
@@ -64,7 +61,6 @@ function Tutor(props) {
             }
           }
           )
-          console.log(response_tutor.data)
         }
         catch(err){
           console.log(err)
@@ -84,12 +80,11 @@ function Tutor(props) {
 
   const sendreason=async(email)=>{
     try{
-const send=await axios.post("http://localhost:3001/psna/tutor/send",{
+const send=await axios.post("https://psna-mohammed-developer.onrender.com/psna/tutor/send",{
   data:{
     email,reason
   }
 })
-console.log(send.data)
     }
     catch(err)
     {
@@ -99,7 +94,7 @@ console.log(send.data)
 
   async function reject(email) {
     try {
-      const resp = await axios.post('http://localhost:3001/psna/tutor/reject', {
+      const resp = await axios.post('https://psna-mohammed-developer.onrender.com/psna/tutor/reject', {
         data: {
           email
         }

@@ -10,12 +10,11 @@ fetchdata()
 
 const fetchdata=async()=>{
     if(Cookies.get("token")){
-      const verify=await axios.post("http://localhost:3001/psna/verification",{
+      const verify=await axios.post("https://psna-mohammed-developer.onrender.com/psna/verification",{
         data:{
           token:Cookies.get('token')?Cookies.get('token'):null
         }
       })
-      console.log(verify.data.message)
       if(verify.data.message.role==="cordinator"){
     //  start()
     }

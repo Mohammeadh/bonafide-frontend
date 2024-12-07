@@ -39,7 +39,7 @@ function LoginForm() {
     async function submit() {
         setDisplay(false)
         try {
-            const response = await axios.post('http://localhost:3001/psna/login', {
+            const response = await axios.post('https://psna-mohammed-developer.onrender.com/psna/login', {
                 data: {
                     email: email,
                     password: password
@@ -79,7 +79,7 @@ function LoginForm() {
 
     async function getcode() {
         try {
-            const res = await axios.post('http://localhost:3001/psna/getcode', {
+            const res = await axios.post('https://psna-mohammed-developer.onrender.com/psna/getcode', {
                 data: {
                     name: name,
                     email: remail
@@ -134,7 +134,7 @@ function LoginForm() {
                     toast.error("Fill The Details")
                 }
                 else {
-                    const response = await axios.post('http://localhost:3001/psna/register', {
+                    const response = await axios.post('https://psna-mohammed-developer.onrender.com/psna/register', {
                         data: {
                             name: name,
                             email: remail,
@@ -193,7 +193,7 @@ function LoginForm() {
     const forgototp = async () => {
         if (femail !== "") {
             try {
-                const forgotResponse = await axios.post("http://localhost:3001/psna/forgotpassword", {
+                const forgotResponse = await axios.post("https://psna-mohammed-developer.onrender.com/psna/forgotpassword", {
                     data: {
                         email: femail
                     }
@@ -230,7 +230,7 @@ function LoginForm() {
         }
         else {
             try {
-                const changepass = await axios.put("http://localhost:3001/psna/forgotverify", {
+                const changepass = await axios.put("https://psna-mohammed-developer.onrender.com/psna/forgotverify", {
                     data: {
                         email: femail,
                         password: fpass

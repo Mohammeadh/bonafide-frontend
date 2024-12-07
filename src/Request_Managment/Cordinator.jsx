@@ -25,9 +25,8 @@ function Cordinator() {
 
   async function fetchData() {
     try {
-      const response = await axios.get('http://localhost:3001/psna/cordinator');
+      const response = await axios.get('https://psna-mohammed-developer.onrender.com/psna/cordinator');
       setlist(response.data.data);
-      console.log(response.data.data)
 
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -482,7 +481,7 @@ function Cordinator() {
 
   const addhistory = async (name, year, department, reason, reg, father, cgpa, sem, gen, mode,email) => {
     try {
-      const history = await axios.post("http://localhost:3001/psna/addhistory", {
+      const history = await axios.post("https://psna-mohammed-developer.onrender.com/psna/addhistory", {
         data: {
           name, year, department, reason, reg, father, cgpa, sem, gen, mode,email
         }
@@ -504,7 +503,7 @@ function Cordinator() {
     setreg(reg)
     setBtn(!button)
     try {
-      const response = await axios.post('http://localhost:3001/psna/cordinator', {
+      const response = await axios.post('https://psna-mohammed-developer.onrender.com/psna/cordinator', {
         data: {
           email: email
         }

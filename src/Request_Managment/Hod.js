@@ -25,8 +25,7 @@ function Hod(props) {
 
   async function fetchData() {
     try {
-      const response = await axios.get('http://localhost:3001/psna/hod');
-      console.log(response.data.data)
+      const response = await axios.get('https://psna-mohammed-developer.onrender.com/psna/hod');
       setlist(response.data.data);
 
 
@@ -39,14 +38,13 @@ function Hod(props) {
 
   async function create(name, email, reason, department, year, regNo, gender, father, tutor,cgpa,sem,mode) {
     try {
-      const res = await axios.post('http://localhost:3001/psna/hod/accept', {
+      const res = await axios.post('https://psna-mohammed-developer.onrender.com/psna/hod/accept', {
         data: {
           name, email, reason, department, year, regNo, gender, father, tutor,cgpa,sem,mode
         }
       }
 
       );
-      console.log(res.data.message);
       toast.success("Granted Sucessfully")
       fetchData()
     } catch (error) {
@@ -62,7 +60,7 @@ function Hod(props) {
 
   async function reject(email) {
     try {
-      const resp = await axios.post('http://localhost:3001/psna/hod/reject', {
+      const resp = await axios.post('https://psna-mohammed-developer.onrender.com/psna/hod/reject', {
         data: {
           email
         }

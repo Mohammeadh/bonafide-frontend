@@ -53,7 +53,7 @@ function Dashboard() {
 
 
   const checkExist = async () => {
-    const check = await axios.post("http://localhost:3001/psna/check", {
+    const check = await axios.post("https://psna-mohammed-developer.onrender.com/psna/check", {
       data: {
         email: Cookies.get('email')
       }
@@ -90,7 +90,7 @@ function Dashboard() {
 
 
   const checkTutor = async () => {
-    const res_tutor = await axios.get("http://localhost:3001/psna/tutorlist")
+    const res_tutor = await axios.get("https://psna-mohammed-developer.onrender.com/psna/tutorlist")
     setTutors(res_tutor.data.message)
   }
 
@@ -101,7 +101,7 @@ function Dashboard() {
     }
     else {
       try {
-        const response = await axios.post('http://localhost:3001/psna/apply', {
+        const response = await axios.post('https://psna-mohammed-developer.onrender.com/psna/apply', {
           data: {
             name: name,
             email: email,
@@ -133,7 +133,7 @@ function Dashboard() {
         else if (response.data.message.name && response.data.message.email) {
           try {
             if (tmail !== "") {
-              const res = await axios.post('http://localhost:3001/psna/notify/tutor', {
+              const res = await axios.post('https://psna-mohammed-developer.onrender.com/psna/notify/tutor', {
                 data: {
                   name: name,
                   email: email,
@@ -263,7 +263,7 @@ function Dashboard() {
 
   const removed = async () => {
     try {
-      const rem = await axios.post('http://localhost:3001/psna/remove', {
+      const rem = await axios.post('https://psna-mohammed-developer.onrender.com/psna/remove', {
         data: {
           regno: lregno
         }
@@ -296,7 +296,7 @@ function Dashboard() {
         <form onChange={(e) => 
           {
             Radio(e)
-            console.log(e.target.value)
+  
             setmsg(e.target.value)
         }}>
           <div className="radio-buttons">

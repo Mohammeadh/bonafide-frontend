@@ -26,8 +26,7 @@ const[tutor,setTutor]=useState("")
 
       async function restore() {
         const token=Cookies.get('token')
-        console.log(token)
-        const verify=await axios.post("http://localhost:3001/psna/verification",{
+        const verify=await axios.post("https://psna-mohammed-developer.onrender.com/psna/verification",{
           data:{
             token:Cookies.get('token')?Cookies.get('token'):null
           }
