@@ -1,0 +1,316 @@
+/* General container */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #f4f9f4;
+    animation: fadeIn 1s ease-out; /* Reduced duration */
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out; /* Slightly faster */
+}
+
+/* Form Container */
+.form-container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1s ease-out;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Reason section */
+.reason-header {
+    color: #4caf50;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.details-header {
+    color: #4caf50;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Improved radio buttons */
+.radio-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.radio-buttons label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Radio button styling */
+.radio-buttons input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect on radio labels */
+.radio-buttons label:hover {
+    color: #45a049;
+}
+
+/* Styling for inputs & selects */
+.select-input, .input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background-color: #ecffdc;
+    font-weight: bold;
+    border: 2px solid #4caf50;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.select-input:focus, .input-field:focus {
+    background-color: #d3f8d3;
+    border-color: #388e3c;
+    transform: translateY(-3px); /* Reduced movement */
+}
+
+/* Submit Button */
+.submit-button {
+    padding: 12px 25px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Submit Button Hover and Focus States */
+.submit-button:hover {
+    background-color: #45a049;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.submit-button:active {
+    transform: translateY(2px);
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Slight movement for smoother entry */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 20px;
+        animation: fadeIn 0.8s ease-out; /* Faster animation */
+    }
+
+    .form-container {
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.8s ease-out;
+    }
+
+    .radio-buttons input[type="radio"] {
+        transform: scale(1.1); /* Reduced scaling */
+    }
+
+    .select-input:focus, .input-field:focus {
+        background-color: #d3f8d3;
+        border-color: #388e3c;
+        transform: translateY(-2px); /* Subtle focus effect */
+    }
+
+    .submit-button {
+        font-size: 1rem; /* Slightly smaller for better readability */
+        padding: 10px 20px;
+    }
+
+    .reason-header, .details-header {
+        font-size: 1.2rem;
+    }
+}
+
+/* Responsive Adjustments for Larger Screens */
+@media (min-width: 1200px) {
+    .dashboard-container {
+        padding: 40px;
+    }
+
+    .form-container {
+        padding: 40px;
+        animation: fadeIn 1.2s ease-out;
+    }
+}
+
+/* Container for the status */
+.status-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 30px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Heading Style */
+.status-heading {
+    font-size: 2rem;
+    color: #4caf50;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: slideDown 0.8s ease-out;
+}
+
+/* Details container */
+.details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeInDetails 1s ease-out 0.3s;
+    animation-fill-mode: both;
+}
+
+/* Individual Details */
+.details-container h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for details */
+.details-container h2:hover {
+    transform: translateX(5px);
+    color: #45a049;
+}
+
+/* Remove Button */
+.remove-button {
+    padding: 10px 20px;
+    background-color: #f44336; /* Red background */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    align-self: center;
+    margin-top: 20px;
+}
+
+/* Hover and Focus Effects */
+.remove-button:hover {
+    background-color: #e53935;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(244, 67, 54, 0.4);
+}
+
+.remove-button:focus {
+    outline: none;
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* Active Effect */
+.remove-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(244, 67, 54, 0.4);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .status-container {
+        padding: 20px 30px;
+        width: 90%;
+    }
+
+    .status-heading {
+        font-size: 1.8rem;
+    }
+
+    .details-container h2 {
+        font-size: 1rem;
+    }
+
+    .remove-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDetails {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
