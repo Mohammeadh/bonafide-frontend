@@ -20,6 +20,7 @@ const Seceratory = (props) => {
 
   useEffect(() => {
     fetchData();
+    console.log(rejectss)
   }, []);
 
   async function fetchData() {
@@ -46,10 +47,7 @@ const Seceratory = (props) => {
     nav("/")
   }
 
-  function letter(reg) {
-    setno(reg)
-    setRejects(false)
-  }
+
 
 
   async function reject(email, role) {
