@@ -58,7 +58,7 @@ function Dashboard() {
       }
     })
     setStatus(check.data.message)
-    if (check.data.message === "Progress in Hod") {
+    if (check.data.message == "Progress in Hod") {
       setlname(check.data.detials.name)
       setlregno(check.data.detials.regNo)
       setlDep(check.data.detials.department)
@@ -68,7 +68,7 @@ function Dashboard() {
 
     }
 
-    if (check.data.message === "Progress in technician") {
+    if (check.data.message == "Progress in technician") {
       setlname(check.data.detials.name)
       setlregno(check.data.detials.regNo)
       setlDep(check.data.detials.department)
@@ -77,7 +77,7 @@ function Dashboard() {
       setltutor(check.data.detials.tutors)
 
     }
-    if (check.data.message === "Progress in Tutor") {
+    if (check.data.message == "Progress in Tutor") {
       setlname(check.data.detials.name)
       setlregno(check.data.detials.Regno)
       setlDep(check.data.detials.Department)
@@ -95,7 +95,7 @@ function Dashboard() {
 
 
   async function save() {
-    if (name !== "" && dep !== "" && email !== "" && yr !== "" && reg !== "" && Subject !== "" && contents !== "" && fname !== "" && sem !== "" && cgpa !== "" && mode !== "" && gen !== "") {
+    if (name != "" && dep != "" && email !== "" && yr != "" && reg != "" && Subject != "" && contents != "" && fname != "" && sem != "" && cgpa != "" && mode != "" && gen != "") {
       toast.warning("Go Back And Fill The Details")
     }
     else {
@@ -126,13 +126,13 @@ function Dashboard() {
           toast.warn("In Progress")
           window.location.reload()
         }
-        if (response.data.error === "Tutor Not Found") {
+        if (response.data.error == "Tutor Not Found") {
           toast.warning("Tutor Not Found")
         }
         else if (response.data.message.name && response.data.message.email) {
           try {
             if (tmail !== "") {
-                 await axios.post('https://psna-mohammed-developer.onrender.com/psna/notify/tutor', {
+              const res = await axios.post('https://psna-mohammed-developer.onrender.com/psna/notify/tutor', {
                 data: {
                   name: name,
                   email: email,
@@ -222,9 +222,14 @@ function Dashboard() {
     setdep(department)
   }
 
+  function Reg(e) {
+    const reg_number = e.target.value
+    setreg(reg_number)
+  }
+
   function gender(e) {
     const g = e.target.value;
-    if (g === "Male") {
+    if (g == "Male") {
       setgender("Mr")
     }
     else {
@@ -251,6 +256,9 @@ function Dashboard() {
     setDisplay(!display)
   }
 
+  function parents(e) {
+    setfname(e.target.value)
+  }
 
   const removed = async () => {
     try {
@@ -390,7 +398,7 @@ function Dashboard() {
             placeholder="Father's Name"
           />
           {
-(message!=='' && yr!=='' && dep!=='' && tutor!=='' && reg !== '' && fname!=='' && genders!=='') && 
+(message!='' && yr!='' && dep!='' && tutor!='' && reg != '' && fname!='' && genders!='') && 
           <button className="submit-button" onClick={()=>{
             setedits(true)
             setgen(false)
@@ -407,7 +415,7 @@ function Dashboard() {
 
 
 
-      {(edits && status === "not in progress") && <div className='request'>
+      {(edits && status == "not in progress") && <div className='request'>
         {
           <div className='dasssh'>
             <center><h2>Bonafide Letter</h2></center>
