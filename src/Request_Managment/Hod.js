@@ -38,7 +38,7 @@ function Hod(props) {
 
   async function create(name, email, reason, department, year, regNo, gender, father, tutor,cgpa,sem,mode) {
     try {
-      const res = await axios.post('https://psna-mohammed-developer.onrender.com/psna/hod/accept', {
+      await axios.post('https://psna-mohammed-developer.onrender.com/psna/hod/accept', {
         data: {
           name, email, reason, department, year, regNo, gender, father, tutor,cgpa,sem,mode
         }
