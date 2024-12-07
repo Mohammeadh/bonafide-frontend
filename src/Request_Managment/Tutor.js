@@ -49,7 +49,7 @@ function Tutor(props) {
       if(res.data.info)
       {
         try{
-          const response_tutor = await axios.post('https://psna-mohammed-developer.onrender.com/psna/notify/hod',{
+          await axios.post('https://psna-mohammed-developer.onrender.com/psna/notify/hod',{
             data:{
               name:name,
               department:department,
