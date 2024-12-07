@@ -69,7 +69,7 @@ function LoginForm() {
         }
         catch (error) {
             console.error('Error:', error);
-        };
+        }
     }
 
 
@@ -88,7 +88,7 @@ function LoginForm() {
             )
             if(res.data.email)
             {
-                if(res.data.email==remail)
+                if(res.data.email===remail)
                 {
                     toast.success("OTP Sent")
                 }
@@ -96,11 +96,11 @@ function LoginForm() {
                     toast.warn("Try Again")
                 }
             }
-            if(res.data.message=="invalid mail")
+            if(res.data.message==="invalid mail")
             {
                 toast.warn("Register With Psnacet Email")
             }
-            if(res.data.message=="Only for student")
+            if(res.data.message==="Only for student")
             {
                 toast.warning(" Only for student Registration")
             }
@@ -125,12 +125,12 @@ function LoginForm() {
 
     async function submits() {
         setDisplay(true)
-        if (key != code) {
+        if (key !== code) {
             toast.error("Wrong OTP")
         }
         else {
             try {
-                if (name == "" && remail == "" && password == "") {
+                if (name === "" && remail === "" && password === "") {
                     toast.error("Fill The Details")
                 }
                 else {
@@ -172,7 +172,7 @@ function LoginForm() {
             }
             catch (error) {
                 console.log('Error:', error);
-            };
+            }
         }
 
     }
@@ -206,7 +206,7 @@ function LoginForm() {
                 }
 
 
-                if (forgotResponse.data.message == "You Don't Have An Account") {
+                if (forgotResponse.data.message === "You Don't Have An Account") {
                     toast.error("You Don't Have An Account")
                 }
 
@@ -222,10 +222,10 @@ function LoginForm() {
     }
 
     const change = async () => {
-        if (otp == "") {
+        if (otp === "") {
             toast.warning("Enter The OTP")
         }
-        if (resetKey != otp) {
+        if (resetKey !== otp) {
             toast.error("Wrong OTP")
         }
         else {
@@ -299,7 +299,7 @@ function LoginForm() {
                                             settype("password")
                                         }} style={{ border: 'none', outline: 'none', background: 'transparent' }} type='button'><LucideEye /></button>}
                                     </div>
-                                    <div className="text"><a onClick={() => setforgot(false)}>Forgot password?</a></div>
+                                    <div className="text"><a href='#' onClick={() => setforgot(false)}>Forgot password?</a></div>
                                     <div className="button input-box">
                                         <input type="submit" value="Submit" onClick={submit} />
                                     </div>
