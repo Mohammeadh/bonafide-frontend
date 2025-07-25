@@ -412,8 +412,7 @@ function LoginForm() {
                 <ol>
                     <p style={{ marginBottom: '5px' }}>Developed By </p>
                     <li><i>R.Mohammed ( IT )</i></li>
-                    <li><i>S.Bahardeen ( IT )</i></li>
-                     <li><i>P.Pranav ( IT )</i></li>
+                    <li><i>S.Mohammed Bahardeen ( IT )</i></li>
                 </ol>
             </div>
         </div>
